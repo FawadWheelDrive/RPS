@@ -1,0 +1,73 @@
+<DOCTYPE! html>
+
+<head>
+  Play Rock, Paper, Scissors in the console window by typing 'rps()'!
+</head>
+
+<script>
+
+  var lowpick;
+  var computerpick;
+
+  function computerplay() {
+    var computerchoices = ['rock', 'paper', 'scissors']
+    var randval = Math.floor(Math.random() * computerchoices.length);
+    computerpick = computerchoices[randval];
+    console.log("Computer pick: " + computerpick)
+  }
+
+  function pick() {
+    var pick = prompt('Rock, Paper, or Scissors?')
+    lowpick = pick.toLowerCase();
+    if (lowpick == ('rock') || lowpick == ('paper') || lowpick == ('scissors')) {
+      console.log("Your pick: " + lowpick);
+    }
+    else {
+      console.log("Incorrect choice. Please try again")
+    }
+  }
+
+  function rps() {
+    pick()
+    computerplay()
+    if (lowpick == 'rock') {
+      if (computerpick == 'rock') {
+        console.log('TIE!')
+      }
+      else if (computerpick == 'scissors') {
+        console.log('You win!');
+      }
+      else if (computerpick == 'paper') {
+        console.log('You lose!')
+      }
+    }
+
+    else if (lowpick == 'scissors') {
+      if (computerpick == 'scissors') {
+        console.log('TIE!')
+      }
+      else if (computerpick == 'paper') {
+        console.log('You win!');
+      }
+      else if (computerpick == 'rock') {
+        console.log('You lose!')
+      }
+    }
+
+    else if (lowpick == 'paper') {
+      if (computerpick == 'paper') {
+        console.log('TIE!')
+      }
+      else if (computerpick == 'rock') {
+        console.log('You win!');
+      }
+      else if (computerpick == 'scissors') {
+        console.log('You lose!')
+      }
+    }
+    else {
+      console.log('Try again')
+    }
+  }
+
+</script>
